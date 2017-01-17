@@ -518,7 +518,7 @@
 % formatação dos títulos propriamente ditos.
 %==============================================================================
 \newcounter{schapter}
-\newcommand{\ii@chapterfont}{\@setfontsize\Large{12}{18}}
+\newcommand{\ii@chapterfont}{\@setfontsize\Large{16}{16}}
 \def\@chapapp{}
 \def\@chapappextra{}
 \def\@chappositioning{\noindent}
@@ -536,11 +536,9 @@
 }
 
 \def\@makechapterhead#1#2{%
-        %\vspace*{90pt}
-        %\vspace{12pt}
+        \vspace*{90pt}
         \reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\@chapappextra\MakeUppercase{#1}}\par}}
-        \addvspace{\baselineskip}
-        \noindent
+        \addvspace{42pt}
         %\par
 }
 \def\@schapter#1{%
@@ -558,9 +556,9 @@
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
 }
 \def\@makeschapterhead#1{%
-        %\vspace*{90pt}
+        \vspace*{90pt}
         \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}\@chapappextra#1}}}
-        \addvspace{18pt}
+        \addvspace{42pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
     \setcounter{chapter}{0}%
@@ -580,13 +578,12 @@
 % \renewcommand{\section}{%
 %         \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
 % }
-%\titleformat*{\section}{\reset@font\normalsize\bfseries}
-\titleformat{\section}[hang]{\bfseries}{\thesection~}{0pt}{}
-\titlespacing\section{0pt}{1.5\baselineskip}{\baselineskip}
-\titleformat*{\subsection}{\reset@font\normalsize\bfseries}
-\titlespacing\subsection{0pt}{1.5\baselineskip}{\baselineskip}
-\titleformat*{\subsubsection}{\reset@font\normalsize\itshape}
-\titlespacing\subsubsection{0pt}{1\baselineskip}{0.5\baselineskip}
+\titleformat*{\section}{\reset@font\bfseries\@setfontsize\large{14pt}{14pt}}
+\titlespacing\section{0pt}{12pt}{3pt}
+\titleformat*{\subsection}{\reset@font\bfseries}
+\titlespacing\subsection{0pt}{6pt}{0pt}
+\titleformat*{\subsubsection}{\reset@font\itshape}
+\titlespacing\subsubsection{0pt}{6pt}{0pt}
 \titleformat*{\paragraph}{\reset@font\normalsize}
 \titlespacing\paragraph{0pt}{1\baselineskip}{0.5\baselineskip}
 % \renewcommand{\subsection}{%
