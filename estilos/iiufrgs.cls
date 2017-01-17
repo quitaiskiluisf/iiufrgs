@@ -140,7 +140,7 @@
 \fi
 
 % espaçamento entre as linhas
-\newcommand{\setlinespacing}{\setstretch{1.415}}
+\newcommand{\setlinespacing}{\setstretch{1}}
 \setlinespacing
 
 % estes valores estão no segundo parágrafo da introdução dos documentos da biblioteca e, portanto, estão corretos
@@ -156,7 +156,7 @@
 
 % indentação dos parágrafos (medido no olho)
 \setlength{\parindent}{3em}
-\AtBeginDocument{\setlength{\parskip}{0mm}}
+\AtBeginDocument{\setlength{\parskip}{6pt}}
 
 %==============================================================================
 % Numeração das páginas
