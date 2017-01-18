@@ -300,8 +300,7 @@
     }%
     \vfill
   }
-  \centerline{\@city}
-  \centerline{\ii@date}
+  \centerline{\@city, \ii@date}
   \vspace{8mm}
 }
 \def\@topbox{%
