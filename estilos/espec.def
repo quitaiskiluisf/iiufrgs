@@ -25,3 +25,5 @@
 }
 
 \newcommand{\nominataCEname}{\coordname\ de Especializa{\c{c}}{\~a}o em \ii@espec}
+
+\course{\pges}
