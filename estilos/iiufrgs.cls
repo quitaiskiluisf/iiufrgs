@@ -381,7 +381,7 @@
 
 \AtEndOfClass{\input{nominata.def}}
 \newcommand{\nominata}{
-  \setstretch{0.95}
+  \setstretch{0}
   \noindent\MakeUppercase{\ufrgs}
 
   \noindent\nominataReitname: \nominataReit
