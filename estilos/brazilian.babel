@@ -70,8 +70,8 @@
 	\def\financname{{\'O}rg{\~a}os Financiadores}%
 	\def\especname{Monografia (especializa{\c{c}}{\~a}o)}%
 	\def\especspecificinfo{%
-		Monografia de Conclus{\~a}o de Curso apresentada como
-		requisito parcial para a obten{\c{c}}{\~a}o do grau de Especialista em \titulacaoEm
+		Trabalho de Conclus{\~a}o apresentado como requisito parcial para a
+		obten{\c{c}}{\~a}o do grau de Especialista em \titulacaoEm
 	}%
 	\def\coordname{Coordenador do Curso}%
 }
