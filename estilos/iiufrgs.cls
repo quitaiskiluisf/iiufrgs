@@ -286,7 +286,7 @@
 }
 \newcommand{\thetitlepage}{%
   \noindent\@topbox\\
-  \vspace{5.9ex}\\
+  \vspace{12ex}\\
   \setstretch{0.95}
   \@ifundefined{titlepagespecificinfo}{}{
     \hspace*{\fill}\makebox[.56\textwidth][l]{%
