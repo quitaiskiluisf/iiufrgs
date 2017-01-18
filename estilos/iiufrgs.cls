@@ -334,8 +334,8 @@
         \MakeUppercase{\@course}\\
 }
 \newcommand{\titlepageadvisorinfo}{%
-        \@ifundefined{@advisor}{}{\advisorname:~\@advisor\\}%
-        \@ifundefined{@coadvisor}{}{\coadvisorname:~\@coadvisor\\}%
+        \@ifundefined{@advisor}{}{\@advisor\\\advisorname}%
+        \@ifundefined{@coadvisor}{}{\@coadvisor\\\coadvisorname}%
 }
 
 %==============================================================================
