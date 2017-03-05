@@ -1,5 +1,5 @@
-%% abntex2.cls, v-1.9 laurocesar
-%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%% abntex2.cls, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at https://www.abntex.net.br/ 
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
@@ -13,128 +13,9 @@
 %% 
 %% The Current Maintainer of this work is the abnTeX2 team, led
 %% by Lauro César Araujo. Further information are available on 
-%% http://abntex2.googlecode.com/
+%% https://www.abntex.net.br/
 %%
 %% This work consists of the file abntex2.cls.
-%%
-%% 2013.10.26 17h45 laurocesar
-%%  Adiciona a marcro \phantompart
-%%  Revisa código do sumário 6027-2012
-%%
-%% 2013.10.24 09h53	laurocesar
-%%  Revisa as alterações de quinto nível
-%%
-%% 2013.10.11 07h27	sggranja
-%%  Adiciona opções sumario=abnt-6027-2012 e sumario=tradicional
-%%
-%% 2013.10.02 11h00	carlini
-%%  Adiciona suporte a subsubsubsection (utilizando paragraph)
-%%  e adiciona a opcao subsubsubsection=TITLE.
-%%
-%% 2013.8.19 07h27	sggranja
-%%  Adiciona macros \IBGEtab e \fonte
-%%
-%% 2013.6.20 07h27	laurocesar / ricardoerikson
-%%  Adiciona condição para a criação de length \chapternamenumlength na 
-%%  definição do chapterstyle abnt
-%%
-%% 2013.5.24 10h29	laurocesar
-%%  Adiciona a opção language ao ambiente citacao.
-%%
-%% 2013.5.21 22h17	ycherem
-%%  Resolve o problema de diferentes espaçamentos superiores entre
-%%  diferentes tipos de seções primárias (resumos, sumários, elementos
-%%  pré-textuais, etc.)
-%%
-%% 2013.5.18 09h35	sggranja / laurocesar
-%%  Conclui implementação das opções chapter=TITLE, section=TITLE,
-%% subsection=TITLE, subsubsection=TITLE.
-%%
-%% 2013.5.16 09h15	sggranja / laurocesar
-%%  Adiciona as opções chapter=Title, chapter=TITLE, section=Title,
-%%  section=TITLE, subsection=TITLE, subsection=Title,
-%%  subsubsection=TITLE, subsubsection=Title
-%%  que alterna os títulos de divisoes do tipo capitulo entre
-%%  caixa baixa e caixa alta. Porem, apenas a implementacao de chapter esta
-%%  completa.
-%%
-%% 2013.3.19 09h32	laurocesar
-%%  Incorpora as macros de nomes a configuracao do babel e prove traducoes
-%%   dessas macros para ingles, de modo que a classe abntex2 ja fique
-%%   internacionalizavel.
-%%
-%% 2013.3.17 11h26	laurocesar
-%%  Altera a implementacao de \titulo, \autor, \data e seus pares
-%%   \imprimirtitulo, \imprimirautor e \imprimirdata para serem meras traducoes
-%%   \title, \author, \date, \thetitle, \theauthor e \thedate, respectivamente.
-%%  Adiciona o comando \renewcommand*{\cftchapterdotsep}{\cftdotsep} para que os
-%% capitulos tambem tenham leaders.
-%%
-%% 2013.3.13 07h33	laurocesar
-%%  Aprimoramentos nas notas de rodapé propostas por gilsonolegario
-%%
-%% 2013.3.12 08h52	laurocesar
-%%  Revisa a classe, remove acentos dos comentarios e orientacoes especificas de
-%%  xelatex. Ajusta o espaçamento das notas de rodape.
-%%
-%% 2013.3.10 10h15	laurocesar
-%%  Altera usepackage por RequirePackage na selecao de fontes em xelatex.
-%%
-%% 2013.3.8 12h29	ycherem
-%%  Inclui codificacao utf8, fontes T1, uso do pacote fontspec para selecao de
-%%  fontes em xelatex.
-%%
-%% 2013.2.23 11h24	laurocesar
-%%  Altera o estilo dos cabecalhos dos artigos para \pagestyle{plain}
-%%  Adiciona lista de siglas e abreviaturas e lista de simbolos 
-%%
-%% 2013.2.18 09h38	laurocesar
-%%  Adiciona \bookmarksetup{startatroot} a \textual e \postextual
-%%
-%% 2013.2.6 22h41	laurocesar
-%%  Remove \vspace*{1cm} no inicio da capa e da folha de rosto: como a margem
-%% padrao e 3cm superior e 2cm inferior, colocar um espaco de mais 1cm superior
-%% deixava o documento com aspecto ruim.
-%%
-%% 2013.2.3 22h10	laurocesar
-%%  Adiciona \partpage, \partanexos e \partapendices
-%%  Modifica comandos de anexos para incluir automaticamente \cftinserthook{toc}{AAA}
-%%
-%% 2013.1.16 18h46	laurocesar
-%%  Altera o \ABNTEXchapterfont para usar \sffamily
-%%
-%% 2013.1.15 07h43	laurocesar
-%%  Altera \pretextualchapyer para que insira automaticamente a opção de alterar
-%%  o cabecalho da pagina criada com \chapter*
-%%
-%% 2013.1.13 09h23	laurocesar
-%%  Altera o ambiente citacao para que receba diferentes recuos no modo
-%%  twocolumn
-%%
-%% 2013.1.12 21h44	laurocesar
-%%  Corrige numeracao continua de seções quando nao esta no modo article
-%%
-%% 2013.1.9 14h24 laurocesar
-%%  Altera o nome \listtablename para ``Lista de tabelas'' (com t minusculo)
-%%  Altera a implementacao do ambiente citacao
-%%
-%% 2013.1.7 20h35 laurocesar
-%%  Uso da fonte de \ABNTEXfontereduzida em \caption, \legend e \footnote
-%%  Redefinicao da implementacao do ambiente resumo: agora ele usa abstract. 
-%%  Criacao de \resumoname e do ambiente resumoumacoluna.
-%%  Tratamento especial dos capitulos e divisoes pre-textuais no caso da option
-%% article estar habilitada.
-%%  Altera a metrica usada para calcular o espacamento dos capitulos abnt de 
-%% \textwidth para \columnwidth.
-%%
-%% 2013.1.3 09h02 laurocesar
-%%  Correção do estilo de capitulo de \renewcommand{\beforechapskip}{0cm} para
-%%  setlength{\beforechapskip}{0cm}
-%%  Inclusão de \title{} \author{} e \date{} nos equivalentes em portugues
-%%
-%% 2012.12.2 09h38 laurocesar
-%%  Criacao do arquivo 
-%%
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
@@ -142,7 +23,7 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{abntex2}[2013/10/26 v1.9 abnTeX2]
+\ProvidesClass{abntex2}[2016/02/26 v-1.9.6 abnTeX2]
 \RequirePackage{ifthen}
 %
 % Captura as options article e twocolumn
@@ -188,7 +69,8 @@
   \setboolean{ABNTEXsumario-tradicional}{true}%
   \setboolean{ABNTEXsumario-abnt-6027-2012}{false}}
 \DeclareOption{sumario=abnt-6027-2012}{%
-  \setboolean{ABNTEXsumario-abnt-6027-2012}{true}}
+  \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
+  \setboolean{ABNTEXsumario-tradicional}{false}}
 %
 % Repassa demais opcoes a memoir	
 %
@@ -197,6 +79,16 @@
 }
 \ProcessOptions\relax
 \LoadClass{memoir}
+
+% sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012, que
+%    soh pode ser usado com memoir v3.6k ou superior
+%    \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
+\ifdefined\settocpreprocessor
+\else
+  \setboolean{ABNTEXsumario-tradicional}{true}
+  \setboolean{ABNTEXsumario-abnt-6027-2012}{false}
+\fi
+
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
@@ -414,20 +306,13 @@
 % ------------------------------------------------------------------------
 
 % ---
-% Notas de rodape - NBR 14724/2011 - 5.2.1 
-\makeatletter
-\renewcommand\@makefntext[1]{\hangindent=1.2em\leftskip=0.4em\hskip-0.4em\@makefnmark\hskip1.2em\relax#1}
-%\renewcommand\@makefntext[1]{\leftskip=0.7cm\hskip-0.15cm\@makefnmark#1}
-\makeatother
-\renewcommand{\foottextfont}{\ABNTEXfontereduzida}
+% Notas de rodape - footnotes - NBR 14724/2011 - 5.2.1 
+\setlength{\footmarkwidth}{1.2em} % largura do footnotemark
+\setlength{\footmarksep}{0em}
+\footmarkstyle{\footnotesize{\textsuperscript{#1}}\hfill}
 
-% Virgula em footnote consecutiva
-\let\oldFootnote\footnote
-\newcommand\nextToken\relax
-\renewcommand\footnote[1]{%
-    \oldFootnote{#1}\futurelet\nextToken\isFootnote}
-\newcommand\isFootnote{%
-    \ifx\footnote\nextToken\textsuperscript{,}\fi}
+% tamanho da fonte do footnote
+\renewcommand{\foottextfont}{\ABNTEXfontereduzida}
 % ---
 
 % ---
@@ -444,8 +329,10 @@
 
 % ---
 % Estilos de caption
+% ---
 \hangcaption
-\captiondelim{\space--\space}
+\newcommand{\ABNTEXcaptiondelim}{~\textendash~}
+\newcommand{\ABNTEXcaptionfontedelim}{:~}
 %\captionnamefont{\ABNTEXfontereduzida}
 %\captiontitlefont{\ABNTEXfontereduzida}
 
@@ -456,7 +343,7 @@
 \AtBeginDocument{%
   % comandos auxiliares para manipular os captions dentro do comando \IBGEtab.
   \newcommand{\configurecaptions}{\captionstyle[\raggedright]{}}
-  \newcommand{\configureseparator}{\captiondelim{: }}
+  \newcommand{\configureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
   % Define o comando \IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
@@ -490,7 +377,8 @@
        \@setminipage
      \fi
      \ABNTEXfontereduzida
-     \configureseparator
+     %\configureseparator
+     \captiondelim{\ABNTEXcaptionfontedelim}
      \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
   \endgroup}
 \makeatother
@@ -505,7 +393,7 @@
 % o pacote caption e amigos.
 \AtEndPackage{caption}{
   \AtBeginDocument{%
-    \DeclareCaptionLabelSeparator{barr}{~--~}
+    \DeclareCaptionLabelSeparator{barr}{\ABNTEXcaptiondelim}
     \DeclareCaptionFont{ABNTEXfontereduzida}{\ABNTEXfontereduzida}
       \captionsetup{format=hang,
                     labelseparator=barr,
@@ -517,6 +405,10 @@
                                 singlelinecheck=false}}
       \renewcommand{\configureseparator}{\captionsetup{labelsep=colon}}
   }
+}
+
+\AtBeginDocument{
+ \captiondelim{\ABNTEXcaptiondelim}
 }
 % ---
 
@@ -541,11 +433,11 @@
 
 % lista de ilustracoes
 \renewcommand{\cftfigurename}{\figurename\space} 
-\renewcommand*{\cftfigureaftersnum}{\hfill--\hfill}
+\renewcommand*{\cftfigureaftersnum}{\hfill\textendash\hfill}
  
 % lista de tabelas  
 \renewcommand{\cfttablename}{\tablename\space}
-\renewcommand*{\cfttableaftersnum}{\hfill--\hfill}	
+\renewcommand*{\cfttableaftersnum}{\hfill\textendash\hfill}	
  
 % fonte das partes e do capitulo do TOC
 \renewcommand{\tocheadstart}{\ABNTEXchapterfont}
@@ -558,10 +450,11 @@
 \renewcommand*{\insertchapterspace}{}
 
 % macros para configurar o Sumário conforme 6027-2012 ou tradicional cft
-\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{\cftinsertcode{A}}{}
+\cftinsertcode{A}{}
 
 \newlength{\cftlastnumwidth}
-\setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth+1em}
+\setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
+\addtolength{\cftlastnumwidth}{1em}
 
 \newcommand{\tocprintchapter}{}
 \newcommand{\tocinnonumchapter}{}
@@ -569,8 +462,32 @@
 \newcommand{\tocpartapendices}{}
 \newcommand{\tocpartanexos}{}
 
+% insere o hifen no anexo/apendice do toc
+\cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill\textendash\hfill}}
+
+% No caso de Sumario (TOC) tradicional
+\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{}{} % essa linha não faz nada,
+                                                     % mas se houver necessidade de alterar o comportamento
+                                                     % do sumário tradicional altere aqui.
+
+% No caso de Sumario (TOC) especifico da ABNT-6027-2012
+
+\makeatletter
+\ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+  \settocpreprocessor{chapter}{%
+  \let\tempf@rtoc\f@rtoc%
+  \def\f@rtoc{%
+  \texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+  }
+  \settocpreprocessor{part}{%
+  \let\tempf@rtoc\f@rtoc%
+  \def\f@rtoc{%
+  \texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+  }
+}{}
+\makeatother
+%
 \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
-  \cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill--\hfill}}
   
   \cftsetindents{part}{0em}{\cftlastnumwidth}
   \cftsetindents{chapter}{0em}{\cftlastnumwidth}
@@ -598,7 +515,39 @@
     \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
     \cftinserthook{toc}{A}}
   %
-  \setlength{\cftbeforechapterskip}{0.5em}
+  \setlength{\cftbeforechapterskip}{1em}
+  %
+  % Fontes das entradas do sumario
+  %
+  \renewcommand{\cftpartfont}{\bfseries\larger}
+  %
+  \renewcommand{\cftchapterfont}{\bfseries}
+  \renewcommand{\cftchapterpagefont}{\normalsize\cftchapterfont}
+  %
+  \renewcommand{\cftsectionfont}{\bfseries}
+  \renewcommand{\cftsectionpagefont}{\cftsectionfont}
+  %
+  \renewcommand{\cftsubsectionfont}{\normalsize}
+  \renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+  %
+  \renewcommand{\cftsubsubsectionfont}{\small}
+  \renewcommand{\cftsubsubsectionpagefont}{\cftsubsubsectionfont}
+  %
+  \renewcommand{\cftparagraphfont}{\footnotesize}
+  \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
+  %
+  % Ajusta entrada Referencias
+  %
+  \renewcommand{\bibsection}{%
+    \chapter*{\bibname}
+    \bibmark
+    \ifnobibintoc\else
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\uppercase{\bibname}}
+    \fi
+    \prebibhook
+}
+  
 }{}
 
 % Comando que simula a finalizacao de uma parte no bookmark e
@@ -607,7 +556,8 @@
   \bookmarksetup{startatroot}%
   \phantomsection%
   \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
-    \addtocontents{toc}{\vspace{\cftbeforepartskip}}}{}%
+    \addtocontents{toc}{\vspace{\cftbeforechapterskip}}}{%
+    \addtocontents{toc}{\vspace{\cftbeforepartskip}}}%
 }
 % -----
 
@@ -657,16 +607,13 @@
   \def\printchaptertitle##1{%
     \chaptitlefont%
     \ifthenelse{\boolean{abntex@innonumchapter}}{\centering\ABNTEXchapterupperifneeded{##1}}{%
-    % else  
-      \ifthenelse{\boolean{abntex@apendiceousecao}}{\centering%
+    \ifthenelse{\boolean{abntex@apendiceousecao}}{%
+        \centering%
         \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-        %\parbox[t]{\columnwidth-\chapternamenumlength}
         \ABNTEXchapterupperifneeded{##1}%
       }{%
         \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
         \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}}%
-      %  \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-      %  \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}%
      }    
   }
        
@@ -678,7 +625,7 @@
      \space\thechapter\space%
      \ifthenelse{\boolean{abntex@apendiceousecao}}{%
        \tocinnonumchapter
-       \space--\space%
+       \ABNTEXcaptiondelim%
      }{} % else
   }
   \renewcommand{\afterchapternum}{}
@@ -932,9 +879,11 @@
 \newcommand{\PRIVATEapendiceconfig}[2]{%
  \setboolean{abntex@apendiceousecao}{true}%
  \renewcommand{\appendixname}{#1}
+ \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+   \renewcommand{\appendixtocname}{\uppercase{#2}}
+  }{%
+  \renewcommand{\appendixtocname}{#2}} 
  \renewcommand{\appendixpagename}{#2}
- \renewcommand{\appendixtocname}{#2}
- 
  \switchchapname{#1}% Corrected from \switchapname -> \switchchapname
  \renewcommand*{\cftappendixname}{#1 \space}
 }
@@ -985,7 +934,7 @@
 \newcommand{\partpage}{%
   \cleardoublepage
   \phantomsection
-  \addcontentsline{toc}{part}{\appendixpagename}
+  \addcontentsline{toc}{part}{\appendixtocname}%
   \appendixpage*
 }
 
@@ -1018,7 +967,7 @@
 }
 \newenvironment*{citacao}[1][default]{%
    \list{}%
-   \footnotesize%
+   \ABNTEXfontereduzida%
    \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
    \item[]%
    \begin{SingleSpace}%
@@ -1050,7 +999,7 @@
 \setlength{\ABNTEXsignthickness}{1pt}
    % ammount of space left between previous text and th signature line
 \newlength{\ABNTEXsignskip}
-\setlength{\ABNTEXsignskip}{1cm}
+\setlength{\ABNTEXsignskip}{0.7cm}
    % \assinatura{name} -> types a line with name under the line, centralized
    % \assinatura*{name} -> Creates the box with the line and name under
    %     it, but the box has no position assigned. However the line and the
@@ -1083,7 +1032,9 @@
     \ABNTEXchapterfont\large\imprimirautor
 
     \vfill
+    \begin{center}
     \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+    \end{center}
     \vfill
     
     \large\imprimirlocal

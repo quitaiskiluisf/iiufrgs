@@ -1,4 +1,4 @@
-%% abntex2-alf.bst, v-1.9.6 laurocesar
+%% abntex2-num.bst, v-1.9.6 laurocesar
 %% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
 %%
 %% This work may be distributed and/or modified under the
@@ -16,8 +16,8 @@
 %% http://www.abntex.net.br/
 %%
 %% Creator and original mantainer: Gerald Weber <gweber@codigolivre.org.br>
-%% Copyright 2001-2002 by the abnTeX group at http://abntex.codigolivre.org.br
-%%
+%% Copyright 2001-2003 by the abnTeX group at http://abntex.codigolivre.org.br
+%% 
 %% This file is an *extensive* modification from a file generated with the docstrip utility.
 %% The original source files were:
 %% merlin.mbs  (with options: `babel,nm-revf,aunm-semi,nmlm,x3,m3,dt-end,yr-com,xmth,vnum-x,volp-com,jwdpg,jwdvol,num-xser,btit-rm,bt-rm,pg-bk,add-pub,pub-date,pub-xpar,pre-pub,isbn,issn,pp,ed,abr,ednx,nfss')
@@ -2028,7 +2028,7 @@ FUNCTION {set.default.abnt.variables}
 { %if you change abnt-num to abnt-alf by hand you need also to change
   %the name of RCSfile by hand, otherwise cvs takes care of it.
   %
-  "$RCSfile: abnt-alf.bst,v $ " extract.cvs.key
+  "$RCSfile: abnt-num.bst,v $ " extract.cvs.key
   %
   "abnt-alf.bst,v " = 'abnt.alf := % #1 para abnt-alf #0 para abnt-num
   "$Revision: v-1.9.6 $" extract.cvs.key 'abnt.bst.revision :=
