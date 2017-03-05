@@ -135,7 +135,10 @@
     % O modelo da UFRGS requer que os títulos dos trabalhos estejam em negrito.
     % Isso é opcional na norma ABNT (que permite que seja usado itálico) e
     % não é o padrão do abntex2.
-    abnt-emphasize=bf
+    abnt-emphasize=bf,
+    % Justifica as referências bibliográficas (por padrão, elas são alinhadas
+    % à esquerda.
+    bibjustif
 ]{abntex2cite}
 \fi
 
