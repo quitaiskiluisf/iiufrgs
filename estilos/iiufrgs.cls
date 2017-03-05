@@ -413,7 +413,7 @@
                     \@afterindentfalse
                     \secdef\@chapter\@schapter}
 
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
