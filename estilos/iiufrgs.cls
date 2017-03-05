@@ -131,8 +131,8 @@
 \else
 \RequirePackage[
     % Habilita o uso de citações no formato autor-data.
-	alf,
-	% O modelo da UFRGS requer que os títulos dos trabalhos estejam em negrito.
+    alf,
+    % O modelo da UFRGS requer que os títulos dos trabalhos estejam em negrito.
     % Isso é opcional na norma ABNT (que permite que seja usado itálico) e
     % não é o padrão do abntex2.
     abnt-emphasize=bf
